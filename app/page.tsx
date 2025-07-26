@@ -10,6 +10,7 @@ import Dashboard from "../components/Dashboard";
 import VaaniAssistant from "../components/VaaniAssistant";
 import CropLifecycleNavigator from "../components/CropLifecycleNavigator";
 import ROICalculator from "../components/ROICalculator";
+import MarketAnalysis from "../components/MarketAnalysis";
 
 export default function Home() {
   const [isDemoOpen, setIsDemoOpen] = useState(false);
@@ -21,6 +22,7 @@ export default function Home() {
   const [isVaaniOpen, setIsVaaniOpen] = useState(false);
   const [isCropNavigatorOpen, setIsCropNavigatorOpen] = useState(false);
   const [isROICalculatorOpen, setIsROICalculatorOpen] = useState(false);
+  const [isMarketAnalysisOpen, setIsMarketAnalysisOpen] = useState(false);
 
   useEffect(() => {
     // Listen to authentication state changes
@@ -74,7 +76,7 @@ export default function Home() {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-b from-green-50 to-white ${(isDemoOpen || isAuthModalOpen || isDashboardOpen || isVaaniOpen || isCropNavigatorOpen || isROICalculatorOpen) ? 'overflow-hidden' : ''}`}>
+    <div className={`min-h-screen bg-gradient-to-b from-green-50 to-white ${(isDemoOpen || isAuthModalOpen || isDashboardOpen || isVaaniOpen || isCropNavigatorOpen || isROICalculatorOpen || isMarketAnalysisOpen) ? 'overflow-hidden' : ''}`}>
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-green-100 relative z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -389,21 +391,42 @@ export default function Home() {
                 <h4 className="text-2xl font-bold text-gray-900">Real-Time Market Intel</h4>
               </div>
               <p className="text-gray-600 mb-6">
-                Ask &quot;What is the price of tomatoes today?&quot; in your native language. Get real-time market data, 
-                trend analysis, and actionable selling recommendations powered by Vertex AI.
+                Get live market prices for 15+ crops from major mandis across India. Track price trends, 
+                demand levels, and receive selling recommendations powered by real-time data.
               </p>
-              <div className="bg-blue-50 rounded-lg p-4">
-                <div className="flex items-center justify-between">
+              <div className="bg-blue-50 rounded-lg p-4 mb-4">
+                <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="font-semibold text-blue-800">Tomatoes</p>
-                    <p className="text-blue-600">₹45/kg ↗️ +12%</p>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-blue-800">Tomatoes</p>
+                        <p className="text-blue-600">₹45/kg ↗️ +12.5%</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-blue-800 font-semibold">Best time to sell</p>
-                    <p className="text-blue-600 text-sm">Market peak expected</p>
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-blue-800">Wheat</p>
+                        <p className="text-blue-600">₹2,150/qt ↗️ +2.4%</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
+                <div className="mt-3 text-center">
+                  <span className="text-xs text-blue-700 bg-blue-100 px-2 py-1 rounded-full">
+                    Live from 15+ Major Mandis
+                  </span>
+                </div>
               </div>
+              {isAuthenticated && (
+                <button
+                  onClick={() => setIsMarketAnalysisOpen(true)}
+                  className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  View Live Market Data
+                </button>
+              )}
             </div>
 
             {/* Government Schemes */}
@@ -759,17 +782,18 @@ export default function Home() {
                   <span>Create Crop Plan</span>
                 </button>
                 <button 
+                  onClick={() => setIsMarketAnalysisOpen(true)}
+                  className="bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-600 transition-colors flex items-center space-x-2 justify-center"
+                >
+                  <TrendingUp className="w-5 h-5" />
+                  <span>Check Market Prices</span>
+                </button>
+                <button 
                   onClick={() => setIsROICalculatorOpen(true)}
                   className="bg-emerald-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center space-x-2 justify-center"
                 >
                   <Calculator className="w-5 h-5" />
                   <span>Calculate ROI</span>
-                </button>
-                <button 
-                  onClick={() => setIsDashboardOpen(true)}
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-green-600 transition-colors"
-                >
-                  Open Dashboard
                 </button>
               </>
             ) : (
@@ -894,6 +918,14 @@ export default function Home() {
         isOpen={isROICalculatorOpen}
         onClose={() => setIsROICalculatorOpen(false)}
       />
+
+      {/* Market Analysis - Available for authenticated users */}
+      {isAuthenticated && (
+        <MarketAnalysis 
+          isOpen={isMarketAnalysisOpen}
+          onClose={() => setIsMarketAnalysisOpen(false)}
+        />
+      )}
     </div>
   );
 }

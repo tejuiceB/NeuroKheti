@@ -6,6 +6,7 @@ import CropDiagnosis from './CropDiagnosis';
 import VaaniAssistant from './VaaniAssistant';
 import CropLifecycleNavigator from './CropLifecycleNavigator';
 import ROICalculator from './ROICalculator';
+import MarketAnalysis from './MarketAnalysis';
 
 interface DashboardProps {
   isOpen: boolean;
@@ -371,6 +372,11 @@ export default function Dashboard({ isOpen, onClose, userEmail }: DashboardProps
       
       <CropDiagnosis 
         isOpen={activeFeature === 'crop-diagnosis'} 
+        onClose={() => setActiveFeature(null)} 
+      />
+      
+      <MarketAnalysis 
+        isOpen={activeFeature === 'market-analysis'} 
         onClose={() => setActiveFeature(null)} 
       />
       
