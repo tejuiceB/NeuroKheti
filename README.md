@@ -34,32 +34,6 @@ This is the frontend application for NeuroKheti - an AI-powered agricultural ass
    npm run dev
    ```
 
-4. **Open in browser:**
-   ```
-   http://localhost:3000
-   ```
-
-## 🏗️ Project Structure
-
-```
-frontend/
-├── app/                    # Next.js App Router
-│   ├── api/               # API routes for AI services
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx          # Main landing page
-├── components/           # React components
-│   ├── AuthModal.tsx     # Authentication modal
-│   ├── Dashboard.tsx     # User dashboard
-│   ├── DemoPopup.tsx     # Demo experience
-│   ├── CropDiagnosis.tsx # Crop analysis feature
-│   └── VaaniAssistant.tsx # Voice assistant
-├── lib/                  # Utilities and configurations
-│   └── firebase.ts       # Firebase configuration
-├── public/              # Static assets
-└── ...config files
-```
-
 ## 🛠️ Technologies Used
 
 - **Next.js 15** - React framework with App Router
@@ -75,9 +49,11 @@ frontend/
 ### ✅ Implemented
 - Crop disease diagnosis with camera
 - Multi-language voice assistant (Vaani)
-- User authentication & profiles
+- User authentication
 - Responsive design for mobile/desktop
 - Real-time AI chat capabilities
+- Crop Lifecycle Navigator
+- ROI Calculator
 
 ### 🚧 In Progress  
 - Market price analysis
@@ -161,42 +137,5 @@ npm run test
 - [ ] Camera capture
 - [ ] AI analysis
 - [ ] Multi-language results
-
-**Voice Assistant:**
-- [ ] Microphone permissions
-- [ ] Voice recognition
-- [ ] Speech synthesis
-- [ ] Multi-language conversation
-
-## 🔒 Security
-
-- Environment variables for API keys
-- Firebase Authentication
-- HTTPS required for camera/microphone
-- CORS protection
-- Input validation
-
-## 📊 Performance
-
-- Next.js 15 optimization
-- Image optimization
-- Code splitting
-- Edge functions for API routes
-- Lighthouse score: 95+
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open Pull Request
-
-## 📞 Support
-
-- **Issues:** [GitHub Issues](https://github.com/your-username/neurokhet/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/your-username/neurokhet/discussions)
-
----
 
 Built with ❤️ for farmers worldwide using cutting-edge AI technology.
