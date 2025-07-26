@@ -351,7 +351,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                     type="text"
                     value={inputs.location}
                     onChange={(e) => setInputs(prev => ({ ...prev, location: e.target.value }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                     placeholder="Enter your district"
                   />
                 </div>
@@ -364,7 +364,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                     type="number"
                     value={inputs.landSize}
                     onChange={(e) => setInputs(prev => ({ ...prev, landSize: parseFloat(e.target.value) || 1 }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                     placeholder="Enter acres"
                     min="0.1"
                     step="0.1"
@@ -376,7 +376,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                   <select
                     value={inputs.soilType}
                     onChange={(e) => setInputs(prev => ({ ...prev, soilType: e.target.value }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                   >
                     <option value="">Select soil type</option>
                     {SOIL_TYPES.map((soil) => (
@@ -393,7 +393,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                   <select
                     value={inputs.waterSource}
                     onChange={(e) => setInputs(prev => ({ ...prev, waterSource: e.target.value }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                   >
                     <option value="">Select water source</option>
                     {WATER_SOURCES.map((water) => (
@@ -407,7 +407,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                   <select
                     value={inputs.fertilityRating}
                     onChange={(e) => setInputs(prev => ({ ...prev, fertilityRating: e.target.value }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                   >
                     <option value="">Select fertility level</option>
                     {FERTILITY_RATINGS.map((fertility) => (
@@ -437,7 +437,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                       ...prev, 
                       costs: { ...prev.costs, seeds: parseFloat(e.target.value) || 0 }
                     }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                     placeholder="₹1000"
                   />
                 </div>
@@ -451,7 +451,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                       ...prev, 
                       costs: { ...prev.costs, fertilizer: parseFloat(e.target.value) || 0 }
                     }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                     placeholder="₹2000"
                   />
                 </div>
@@ -465,7 +465,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                       ...prev, 
                       costs: { ...prev.costs, pesticides: parseFloat(e.target.value) || 0 }
                     }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                     placeholder="₹1500"
                   />
                 </div>
@@ -479,7 +479,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                       ...prev, 
                       costs: { ...prev.costs, labor: parseFloat(e.target.value) || 0 }
                     }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                     placeholder="₹3000"
                   />
                 </div>
@@ -493,7 +493,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                       ...prev, 
                       costs: { ...prev.costs, irrigation: parseFloat(e.target.value) || 0 }
                     }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                     placeholder="₹1000"
                   />
                 </div>
@@ -507,7 +507,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                       ...prev, 
                       costs: { ...prev.costs, transport: parseFloat(e.target.value) || 0 }
                     }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                     placeholder="₹600"
                   />
                 </div>
@@ -521,7 +521,7 @@ export default function ROICalculator({ isOpen, onClose, preSelectedCrop }: ROIC
                       ...prev, 
                       costs: { ...prev.costs, misc: parseFloat(e.target.value) || 0 }
                     }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-gray-900"
                     placeholder="₹500"
                   />
                 </div>
