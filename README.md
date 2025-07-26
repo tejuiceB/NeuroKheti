@@ -113,23 +113,6 @@ GEMINI_API_KEY=your_gemini_api_key
 NEXT_PUBLIC_USE_FIREBASE_EMULATOR=false
 ```
 
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-1. **Connect to Vercel:**
-   ```bash
-   npm i -g vercel
-   vercel
-   ```
-
-2. **Configure environment variables in Vercel dashboard**
-
-3. **Deploy:**
-   ```bash
-   vercel --prod
-   ```
-
 ### Manual Deployment
 
 1. **Build the application:**
