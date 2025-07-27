@@ -5,7 +5,7 @@ import { getStorage, connectStorageEmulator } from 'firebase/storage';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyC2hetsbb-cSqa10wxWSxeS-1WYCoVPXCU",
+  apiKey: "GEMINI_API_KEY",
   authDomain: "neurokhet-353c1.firebaseapp.com",
   projectId: "neurokhet-353c1",
   storageBucket: "neurokhet-353c1.firebasestorage.app",
